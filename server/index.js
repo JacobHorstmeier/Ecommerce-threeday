@@ -10,6 +10,8 @@ app.use(bodyParser.json())
 massive(process.env.CONNECTION_STRING).then(db => app.set('db', db))
 
 app.get('/api/products', ctrl.getAll)
+app.post('/api/addToCart', ctrl.addToCart)
+app.delete('/api/deleteProduct/:id', ctrl.deleteProduct)
 
 
 const port = 3030
